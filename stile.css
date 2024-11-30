@@ -1,0 +1,443 @@
+        /* Stili generali */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Barra di navigazione */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sezione principale */
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            background-image: url('parcomontecucco.jpg'); /* Background immagine */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Oscuramento immagine */
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .buttons {
+            margin-top: 20px;
+        }
+
+        .hero .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .hero .buttons a:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        footer .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        footer .logo-container img {
+            max-height: 50px;
+            margin-right: 20px;
+        }
+
+        footer .info {
+            text-align: center;
+            flex: 2;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer .info strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer .credits {
+            text-align: right;
+            flex: 1;
+            font-size: 0.8rem;
+        }
+
+        footer .credits strong {
+            display: block;
+        }
+
+
+
+
+/* Stili sezione corsi */
+.corsi {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.corsi .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.corsi h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+    text-transform: uppercase;
+    border-bottom: 3px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.corsi p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.grid-corsi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.corso {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.corso h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.corso p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Stile generale per layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenitore principale */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Sezione Galleria */
+section.galleria {
+    flex: 1; /* Occupa lo spazio rimanente per spingere il footer in basso */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout griglia per immagini */
+    gap: 20px; /* Spaziatura tra gli elementi */
+    padding: 40px;
+    background-color: #f9f9f9; /* Colore di sfondo chiaro */
+    text-align: center;
+}
+
+/* Stile per le immagini della galleria */
+section.galleria img {
+    width: 100%; /* Adatta le immagini alla griglia */
+    height: auto;
+    border-radius: 8px; /* Angoli arrotondati */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Effetto ombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effetti di hover */
+}
+
+section.galleria img:hover {
+    transform: scale(1.05); /* Zoom leggero */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto; /* Spinge il footer in basso */
+}
+
+footer .logo-container img {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+footer .info {
+    text-align: center;
+    flex: 2;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer .credits {
+    text-align: right;
+    flex: 1;
+    font-size: 15px;
+}
+
+
+
+
+
+/* Stile Generale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Chi Siamo */
+.chi-siamo-header {
+    background: url('header.jpg') no-repeat center/cover;
+    color: black;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.chi-siamo-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.chi-siamo-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Sezione Informazioni */
+.info-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.info-container .text {
+    flex: 1;
+    padding: 20px;
+}
+
+.info-container .image {
+    flex: 1;
+    text-align: center;
+}
+
+.info-container .image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Sezione Valori */
+.values-section {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.values-section h2 {
+    margin-bottom: 30px;
+}
+
+.values {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.value {
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.value h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+footer .logo-container img {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+footer .info {
+    text-align: center;
+    flex: 2;
+    font-size: 0.9rem;
+}
+
+footer .credits {
+    text-align: right;
+    flex: 1;
+    font-size: 0.8rem;
+}
+
+#centro{
+    text-align: center;
+    color: black;
+}
