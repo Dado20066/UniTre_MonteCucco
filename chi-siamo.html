@@ -1,97 +1,497 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo unitre.png">
     <title>Chi Siamo - Unitre Monte Cucco</title>
-    <link rel="stylesheet" href="stile.css">
-</head>
+
+<style>
+    /* Stili generali */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Barra di navigazione */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+    }
+
+    nav .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .logo img {
+        max-height: 40px;
+        margin-right: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Sezione principale */
+    .hero {
+        position: relative;
+        text-align: center;
+        color: white;
+        background-image: url('parcomontecucco.jpg');
+        /* Background immagine */
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Oscuramento immagine */
+    }
+
+    .hero .content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero .buttons {
+        margin-top: 20px;
+    }
+
+    .hero .buttons a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .hero .buttons a:hover {
+        background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    footer .logo-container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    footer .logo-container img {
+        max-height: 50px;
+        margin-right: 20px;
+    }
+
+    footer .info {
+        text-align: center;
+        flex: 2;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    footer .info strong {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    footer .credits {
+        text-align: right;
+        flex: 1;
+        font-size: 0.8rem;
+    }
+
+    footer .credits strong {
+        display: block;
+    }
+
+    /* Stile Generale */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header Chi Siamo */
+    .chi-siamo-header {
+        background: url('header.jpg') no-repeat center/cover;
+        color: black;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .chi-siamo-header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .chi-siamo-header p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    /* Sezione Informazioni */
+    .info-section {
+        padding: 40px 20px;
+        background-color: #c0c0c0;
+    }
+
+    .info-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .info-container.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .info-container .text {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .info-container .image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .info-container .image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+    }
+
+    /* Sezione Valori */
+    .values-section {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .values-section h2 {
+        margin-bottom: 30px;
+    }
+
+    .values {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .value {
+        background: white;
+        color: #333;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1;
+        max-width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .value h3 {
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: auto;
+    }
+
+    footer .logo-container img {
+        max-height: 50px;
+        margin-right: 20px;
+    }
+
+    footer .info {
+        text-align: center;
+        flex: 2;
+        font-size: 0.9rem;
+    }
+
+    footer .credits {
+        text-align: right;
+        flex: 1;
+        font-size: 0.8rem;
+    }
+
+    #centro {
+        text-align: center;
+        color: black;
+    }
+
+    /* Media Query per dispositivi mobili */
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 15px;
+        }
+
+        nav .logo {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 5px 0;
+        }
+
+        nav ul li a {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        footer {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        footer .info,
+        footer .credits {
+            margin-bottom: 5px;
+            text-align: center;
+        }
+    }
+</style>
+
 <body>
     <!-- Barra di navigazione -->
     <nav>
         <div class="logo">
-            <img src="logo.png" alt="Logo Unitre">
-            <span>UNITRE</span>
+            <img src="logo unitre.png" alt="Logo Unitre">
+
         </div>
         <ul>
             <li><a href="Home Page.html">HOME</a></li>
+            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
             <li><a href="corsi.html">CORSI E SEMINARI</a></li>
             <li><a href="galleria.html">GALLERIA</a></li>
-            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
             <li><a href="">CONTATTI</a></li>
             <li><a href="social.html">SOCIAL</a></li>
         </ul>
     </nav>
 
     <!-- Sezione Intestazione -->
-     <div id="centro" >
-    <header class="chi-siamo-header">
-        <h1>Chi Siamo</h1>
-        <p>Conosci la nostra missione, la nostra storia e i valori che ci guidano.</p>
-    </header>
+    <div id="centro">
+        <header class="chi-siamo-header">
+            <h1>Chi Siamo</h1>
+            <p>Siamo una sezione locale dell'Unitre, Università delle Tre Età, l'istituzione dedicata alla promozione
+                dell'apprendimento permanente. Una opportunità culturale e formativa per il territorio dell'Alto
+                Chiascio, che arricchisce e completa la rete associativa presente nei Comuni del Parco naturale
+                regionale del Monte Cucco. “Una comunità del sapere” aderente alla grande famiglia dell' Unitre,
+                Associazione di Promozione Sociale senza scopo di lucro con oltre 100.000 iscritti e 350 sedi su tutto
+                il territorio nazionale e all’estero. </p>
+            <p style="font-weight: bold;">Il Consiglio direttivo è composto dai soci fondatori: <br> Presidente Catia
+                Mariani e Vicepresidenti Sante
+                Pirrami e Sandro Giacchetti <br> direttori dei corsi Tonina Cecchetti ed Euro Puletti <br> Responsabile
+                delle
+                Relazioni pubbliche Annalisa Paffi <br> segretaria Mariella Facchini <br> Tesoriere Adele Pellegrini e
+                docenti
+                soci Leda Burzacca e Monfrinotti Don Matteo
+            </p>
 
-    <!-- Sezione Informazioni -->
-    <section class="info-section">
-        <div class="info-container">
-            <div class="text">
-                <h2>La nostra missione</h2>
-                <p>
-                    L'Università della Terza Età UNITRE, Sede del Parco del Monte Cucco, 
-                    promuove la cultura, il dialogo intergenerazionale e la socializzazione attraverso corsi, eventi 
-                    e attività che coinvolgono persone di tutte le età.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Sezione Storia -->
-    <section class="info-section">
-        <div class="info-container reverse">
-            <div class="text">
-                <h2>La nostra storia</h2>
-                <p>
-                    Dal 1990, la Sede del Parco del Monte Cucco si dedica alla promozione di attività culturali
-                    e sociali per favorire l'apprendimento permanente e il benessere personale.
-                </p>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Sezione Valori -->
-    <section class="values-section">
-        <h2>I nostri valori</h2>
-        <div class="values">
-            <div class="value">
-                <h3>Inclusione</h3>
-                <p>Crediamo nel potere dell'educazione per tutti, senza limiti di età o background.</p>
+        <!-- Sezione Informazioni -->
+        <section class="info-section">
+            <div class="info-container">
+                <div class="text">
+                    <h2>La nostra missione</h2>
+                    <p>
+                        Promuovere attività di cultura e umanità, offrire informazione, comunicazione, confronto,
+                        ascolto e condivisione di esperienze professionali e personali. <br> Un laboratorio continuo di
+                        cultura, conoscenza e competenza, ponte di dialogo fra generazioni. Un luogo dove docenti e
+                        relatori accreditati potranno proporre e tenere incontri, letture, approfondimenti, spettacoli,
+                        indagando le novità, i cambiamenti e le opportunità della società di oggi, con un linguaggio
+                        accessibile e intergenerazionale . <br> Uno spazio dove si potranno valorizzare anche le
+                        peculiarità
+                        della storia, dell'ambiente, dell'arte di un territorio, nascosto ma ricco di eccellenze, quale
+                        quello del Parco Naturale regionale del Monte Cucco.
+                    </p>
+                </div>
             </div>
-            <div class="value">
-                <h3>Socializzazione</h3>
-                <p>Promuoviamo il dialogo e le connessioni tra generazioni e comunità.</p>
+        </section>
+
+        <!-- Sezione Storia -->
+        <section class="info-section">
+            <div class="info-container reverse">
+                <div class="text">
+                    <h2>La nostra storia</h2>
+                    <p>
+                        La costituzione dell'Associazione denominata "Unitre Parco del Monte Cucco", si deve in
+                        particolare all'iniziativa di un nucleo di soci fondatori, fortemente legati per esperienze
+                        istituzionali, associative e professionali al territorio dei comuni di Fossato di Vico, Sigillo,
+                        Costacciaro e Scheggia e Pascelupo. <br> L'approvazione dello Statuto e del Regolamento è
+                        avvenuta
+                        giovedì 12 settembre alla presenza del Prof. Gustavo Cuccini, già Presidente e Direttore
+                        dell'Unitre nazionale. <br> Ad ospitare l'incontro è stata la Comunità delle Suore Agostiniane
+                        in
+                        Sigillo, presidio altamente simbolico della vita e della spiritualità di questa parte
+                        dell'appennino umbro al confine con le marche, in passato terra prediletta a forte vocazione
+                        contemplativa e eremitica. <br> Il Monastero è stato per oltre un secolo luogo di educazione e
+                        istruzione, scuola e educandato per fanciulle, convitto ed istituto assistenziale per
+                        l'infanzia.
+                    </p>
+                    <!-- Sezione Comunità Educante -->
+                    <section class="info-section">
+                        <div class="info-container">
+                            <div class="text">
+                                <h2>Una Comunità Educante</h2>
+                                <p>
+                                    Per tali iniziative e per tutte le altre finalità e attività individuate all’art. 3
+                                    del suo Statuto,
+                                    l’Unitre Parco del Monte Cucco ha inteso formalizzare la propria offerta di
+                                    collaborazione
+                                    all’Istituto comprensivo di Sigillo, proponendo la sottoscrizione di un patto
+                                    educativo, basato
+                                    sulla co-progettazione e corresponsabilità di possibili attività condivise da
+                                    realizzare nel territorio.
+                                </p>
+                                <p>
+                                    Infine, in accordo con le amministrazioni locali, la sede operativa dell’Unitre è
+                                    ospitata nelle
+                                    aule degli edifici scolastici dei comuni del Parco. La scelta di collocare la sede
+                                    operativa dell’Unitre
+                                    in uno spazio interno alla scuola, oltre a rispondere all’opportunità di percepire i
+                                    plessi scolastici
+                                    come “ambienti formativi allargati”, come “beni comuni” aperti alla sperimentazione
+                                    e all’interazione
+                                    con il territorio, risulta funzionale alle particolari esigenze didattiche della
+                                    comunità disseminata
+                                    nel territorio del Parco.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
             </div>
-            <div class="value">
-                <h3>Apprendimento</h3>
-                <p>Favoriamo la crescita personale attraverso corsi innovativi e stimolanti.</p>
+        </section>
+
+        <!-- Sezione Valori -->
+        <section class="values-section">
+            <h2>I nostri valori</h2>
+            <div class="values">
+                <div class="value">
+                    <h3>Inclusione</h3>
+                    <p>Crediamo nel potere dell'educazione per tutti, senza limiti di età o background.</p>
+                </div>
+                <div class="value">
+                    <h3>Socializzazione</h3>
+                    <p>Promuoviamo il dialogo e le connessioni tra generazioni e comunità.</p>
+                </div>
+                <div class="value">
+                    <h3>Apprendimento</h3>
+                    <p>Favoriamo la crescita personale attraverso corsi innovativi e stimolanti.</p>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="logo-container">
-            <img src="logo.png" alt="Logo Unitre">
+            <img src="logo unitre.png" alt="Logo Unitre">
         </div>
         <div class="info">
             <strong>Università della Terza Età - Sede del Parco del Monte Cucco</strong>
-            Codice Fiscale: 12345678901<br>
-            Email: info@unitremontecucco.it<br>
-            PEC: pec.unitre@pec.it<br>
-            Telefono: +39 075 1234567
+            Codice Fiscale: 92022480542<br>
+            Email: parcomontecucco@unitre.net<br>
+            Email per iscrizione corsi: unitreparcomontecucco@gmail.com <br>
+            PEC: unitreparcomontecucco@pec.it
         </div>
         <div class="credits">
-            &copy; 2024 Università Parco del Monte Cucco<br>
+            <br>
+            &copy; 2025 Università Parco del Monte Cucco<br>
             Sito realizzato da Spigarelli Davide.
         </div>
     </footer>
 </body>
+
 </html>

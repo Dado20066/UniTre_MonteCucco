@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="it">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="logo unitre.png">
-    <title>Unitre - Sede del Parco del Monte Cucco</title>
+    <title>Contatti</title>
     <style>
         /* Stili generali */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Barra di navigazione */
@@ -52,6 +54,49 @@
 
         nav ul li a:hover {
             text-decoration: underline;
+        }
+
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 15px;
+            }
+
+            nav .logo {
+                order: 1;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 5px;
+            }
+
+            nav .logo img {
+                max-height: 30px;
+                margin-right: 8px;
+            }
+
+            nav ul {
+                order: 2;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 5px 0;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 5px 10px;
+                text-align: center;
+            }
         }
 
         /* Sezione principale */
@@ -126,8 +171,8 @@
             background-color: black;
             color: white;
             padding: 20px;
-            position: relative;
             flex-wrap: wrap;
+            margin-top: auto;  /* Assicura che il footer vada in fondo */
         }
 
         footer .logo-container {
@@ -142,10 +187,11 @@
         }
 
         footer .info {
-            text-align: center;
+            text-align: left;
             flex: 2;
             font-size: 0.9rem;
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         footer .info strong {
@@ -157,6 +203,7 @@
             text-align: right;
             flex: 1;
             font-size: 0.8rem;
+            margin-bottom: 15px;
         }
 
         footer .credits strong {
@@ -165,30 +212,6 @@
 
         /* Media Query per dispositivi mobili */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 15px;
-            }
-
-            nav .logo {
-                width: 100%;
-                justify-content: center;
-                margin-bottom: 5px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 5px 0;
-            }
-
-            nav ul li a {
-                font-size: 0.9rem;
-                padding: 5px 10px;
-                text-align: center;
-            }
-
             footer {
                 flex-direction: column;
                 align-items: center;
@@ -201,68 +224,44 @@
             footer .credits {
                 margin-bottom: 5px;
             }
-
-            footer .logo-container {
-                justify-content: center;
-            }
-
-            footer .credits {
-                text-align: center;
-            }
         }
     </style>
 </head>
-
 <body>
-    <!-- Barra di navigazione -->
     <nav>
         <div class="logo">
-            <img src="logo unitre.png" alt="Logo Unitre">
+            <img src="logo.png" alt="Logo Unitre">
+            <span>UNITRE</span>
         </div>
         <ul>
             <li><a href="Home Page.html">HOME</a></li>
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
             <li><a href="corsi.html">CORSI E SEMINARI</a></li>
             <li><a href="galleria.html">GALLERIA</a></li>
-            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="">CONTATTI</a></li>
             <li><a href="social.html">SOCIAL</a></li>
         </ul>
     </nav>
 
-    <!-- Sezione principale -->
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="content">
 
-            <h1>UNITRE <br>
-                Università delle tre età</h1>
-            <h2>Sede del Parco del Monte Cucco</h2>
-            <p>Promuoviamo la cultura, il dialogo intergenerazionale e la socializzazione attraverso corsi e attività.
-            </p>
-            <div class="buttons">
-                <a href="chi-siamo.html">CHI SIAMO</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="logo-container">
-            <img src="logo unitre.png" alt="Logo Unitre">
-        </div>
-        <div class="info">
-            <strong>Università della Terza Età - Sede del Parco del Monte Cucco</strong>
-            Codice Fiscale: 92022480542<br>
-            Email: parcomontecucco@unitre.net<br>
-            Email per iscrizione corsi: unitreparcomontecucco@gmail.com <br>
-            PEC: unitreparcomontecucco@pec.it
-        </div>
-        <div class="credits">
-            <br>
-            &copy; 2025 Università Parco del Monte Cucco<br>
-            Sito realizzato da Spigarelli Davide.
-        </div>
-    </footer>
+ <!-- Footer -->
+ <footer>
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo Unitre">
+    </div>
+    <div class="info">
+        <strong>Università della Terza Età - Sede del Parco del Monte Cucco</strong>
+        Codice Fiscale: 92022480542<br>
+        Email: parcomontecucco@unitre.net<br>
+        Email per iscrizione corsi: unitreparcomontecucco@gmail.com <br>
+        PEC: unitreparcomontecucco@pec.it
+    </div>
+    <div class="credits">
+        <br>
+        &copy; 2025 Università Parco del Monte Cucco<br>
+        Sito realizzato da Spigarelli Davide.
+    </div>
+</footer>
 </body>
 
 </html>
