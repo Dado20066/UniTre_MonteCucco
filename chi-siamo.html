@@ -262,80 +262,88 @@
         margin-bottom: 10px;
     }
 
-    /* Footer */
-    footer {
-        background-color: black;
-        color: white;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: auto;
-    }
-
-    footer .logo-container img {
-        max-height: 50px;
-        margin-right: 20px;
-    }
-
-    footer .info {
-        text-align: center;
-        flex: 2;
-        font-size: 0.9rem;
-    }
-
-    footer .credits {
-        text-align: right;
-        flex: 1;
-        font-size: 0.8rem;
-    }
-
-    #centro {
-        text-align: center;
-        color: black;
-    }
-
-    /* Media Query per dispositivi mobili */
-    @media (max-width: 768px) {
-        nav {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 10px 15px;
-        }
-
-        nav .logo {
-            width: 100%;
-            justify-content: center;
-            margin-bottom: 5px;
-        }
-
-        nav ul {
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 5px 0;
-        }
-
-        nav ul li a {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-            text-align: center;
-        }
-
+        /* Footer */
         footer {
-            flex-direction: column;
-            align-items: center;
+            background-color: black;
+            color: white;
+            padding: 20px;
             text-align: center;
-            gap: 15px;
-            padding: 15px;
         }
 
-        footer .info,
-        footer .credits {
-            margin-bottom: 5px;
-            text-align: center;
+        footer .logo-container img {
+            max-height: 50px;
+            margin-right: 20px;
         }
-    }
+
+        footer .info {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer .info strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer .credits {
+            font-size: 0.8rem;
+        }
+
+        footer .credits strong {
+            display: block;
+        }
+
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 15px;
+                /* Spazio moderato */
+            }
+
+            nav .logo {
+
+                align-items: center;
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+                /* Spazio ridotto tra logo e menu */
+            }
+
+            nav .logo img {
+                max-height: 60px;
+                /* Modifica questo valore per ingrandire il logo */
+                margin-right: 10px;
+            }
+
+
+
+            nav ul {
+                order: 2;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                gap: 10px;
+                /* Spazio tra i link */
+                padding: 5px 0;
+                /* Margine moderato sopra/sotto */
+            }
+
+            nav ul li {
+                margin: 0;
+                /* Rimosso margine superfluo */
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                /* Dimensione testo adeguata */
+                padding: 5px 10px;
+                /* Spazio moderato per cliccare facilmente */
+                text-align: center;
+            }
+        }
 </style>
 
 <body>
@@ -346,7 +354,7 @@
 
         </div>
         <ul>
-            <li><a href="Home Page.html">HOME</a></li>
+            <li><a href="Home-Page.html">HOME</a></li>
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
             <li><a href="corsi.html">CORSI E SEMINARI</a></li>
             <li><a href="galleria.html">GALLERIA</a></li>
