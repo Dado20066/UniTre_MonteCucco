@@ -15,8 +15,10 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow-x: hidden;  /* Impedisce lo scrolling orizzontale */
-            overflow-y: auto;    /* Abilita lo scrolling verticale solo se necessario */
+            overflow-x: hidden;
+            /* Impedisce lo scrolling orizzontale */
+            overflow-y: auto;
+            /* Abilita lo scrolling verticale solo se necessario */
         }
 
         /* Barra di navigazione */
@@ -27,8 +29,10 @@
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
-            width: 100%;  /* Impedisce che la barra di navigazione esca dai limiti */
-            box-sizing: border-box;  /* Include il padding nel calcolo della larghezza */
+            width: 100%;
+            /* Impedisce che la barra di navigazione esca dai limiti */
+            box-sizing: border-box;
+            /* Include il padding nel calcolo della larghezza */
         }
 
         nav .logo {
@@ -37,7 +41,8 @@
         }
 
         nav .logo img {
-            max-height: 60px; /* Aumenta la dimensione del logo nel nav */
+            max-height: 60px;
+            /* Aumenta la dimensione del logo nel nav */
             margin-right: 10px;
         }
 
@@ -63,17 +68,19 @@
             text-decoration: underline;
         }
 
-  /* Footer */
-  footer {
+        /* Footer */
+        footer {
             background-color: black;
             color: white;
             padding: 20px;
             text-align: center;
+            margin-top: auto;
+            /* Assicura che il footer rimanga sempre in fondo alla pagina */
         }
 
         footer .logo-container img {
             max-height: 50px;
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
 
         footer .info {
@@ -88,10 +95,12 @@
 
         footer .credits {
             font-size: 0.8rem;
+            margin-top: 10px;
         }
 
         footer .credits strong {
             display: block;
+            margin-top: 5px;
         }
 
         /* Social */
@@ -118,8 +127,8 @@
             transition: transform 0.3s;
         }
 
-/* Media Query per dispositivi mobili */
-@media (max-width: 768px) {
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 align-items: flex-start;
@@ -169,6 +178,20 @@
                 text-align: center;
             }
         }
+
+        /* Stile per il logo Maps */
+        #grandezza-logo-maps {
+            width: 80px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #grandezza-logo-maps:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
     </style>
 
     <script src="javascript.js"></script>
@@ -183,9 +206,10 @@
         <ul>
             <li><a href="Home-Page.html">HOME</a></li>
             <li><a href="chi-siamo.html">CHI SIAMO</a></li>
-            <li><a href="corsi.html">CORSI E SEMINARI</a></li>
+            <li><a href="corsi.html">CORSI E ATTIVITA'</a></li>
+            <li><a href="iscrizioni.html">ISCRIZIONI</a></li>
             <li><a href="galleria.html">GALLERIA</a></li>
-            <li><a href="">CONTATTI</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
             <li><a href="social.html">SOCIAL</a></li>
         </ul>
     </nav>
@@ -197,9 +221,13 @@
     </header>
 
     <div class="social-links">
-        <img id="grandezza-logooff" onclick="facebook()" src="https://i.ibb.co/Vptw1hz/facebook-logo.png" alt="Logo Facebook">
-        <img id="grandezza-logooff" onclick="instagram()" src="https://i.ibb.co/PNNwxQ3/instagram-logo.png" alt="Logo Instagram">
+        <img id="grandezza-logooff" onclick="facebook()" src="https://i.ibb.co/Vptw1hz/facebook-logo.png"
+            alt="Logo Facebook">
+        <img id="grandezza-logooff" onclick="instagram()" src="https://i.ibb.co/PNNwxQ3/instagram-logo.png"
+            alt="Logo Instagram">
+        <img id="grandezza-logo-maps" onclick="maps()" src="https://i.ibb.co/J7KSnY5/maps.png" alt="Logo Maps">
     </div>
+
 
     <!-- Footer -->
     <footer>

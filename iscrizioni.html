@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iscrizioni</title>
+    <style>
+        /* Stili generali */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Barra di navigazione */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 15px;
+            }
+
+            nav .logo {
+                order: 1;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: flex-start;
+                margin-bottom: 5px;
+            }
+
+            nav .logo img {
+                max-height: 30px;
+                margin-right: 8px;
+            }
+
+            nav ul {
+                order: 2;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 5px 0;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 5px 10px;
+                text-align: center;
+            }
+        }
+
+        /* Sezione principale */
+        h1 {
+            color: #4CAF50;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        footer .logo-container img {
+            max-height: 50px;
+            margin-right: 20px;
+        }
+
+        footer .info {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        footer .info strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        footer .credits {
+            font-size: 0.8rem;
+        }
+
+        footer .credits strong {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo unitre.png" alt="Logo Unitre">
+        </div>
+        <ul>
+            <li><a href="Home-Page.html">HOME</a></li>
+            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
+            <li><a href="corsi.html">CORSI E ATTIVITA'</a></li>
+            <li><a href="iscrizioni.html">ISCRIZIONI</a></li>
+            <li><a href="galleria.html">GALLERIA</a></li>
+            <li><a href="contatti.html">CONTATTI</a></li>
+            <li><a href="social.html">SOCIAL</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="content">
+            <h1>Iscrizione</h1>
+            <p>
+                E’ possibile iscriversi all'UNITRE presso la sede operativa dell'Associazione <br>
+                Aula piano terra ingresso giardino scuola dell’Infanzia G. Agostinelli <span> via Brunozzi Sigillo
+                    (PG)</span> <br> <span> Nei giorni di lunedì
+                    dalle 17.00 alle 18.30.</span> <br> Vi verranno fornite tutte le informazioni sulle attività e
+                corsi.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logo-container">
+            <img src="logo unitre.png" alt="Logo Unitre">
+        </div>
+        <div class="info">
+            <strong>Università della Terza Età - Sede del Parco del Monte Cucco</strong>
+            Codice Fiscale: 92022480542<br>
+            Email: parcomontecucco@unitre.net<br>
+            Email per iscrizione corsi: unitreparcomontecucco@gmail.com <br>
+            PEC: unitreparcomontecucco@pec.it
+        </div>
+        <div class="credits">
+            <br>
+            &copy; 2025 Università Parco del Monte Cucco<br>
+            Sito realizzato da Spigarelli Davide.
+        </div>
+    </footer>
+</body>
+
+</html>
