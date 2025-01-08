@@ -8,3 +8,7 @@ function instagram() {
 function maps(){
     window.location.href = "https://maps.app.goo.gl/oQFXbKU5wuVdYZWn6";
 }
+
+function form(){
+    window.location.href = "https://forms.gle/g6DpUGBCGgTQDdHQ8";
+}
