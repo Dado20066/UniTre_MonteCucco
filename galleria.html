@@ -8,8 +8,7 @@
     <title>Unitre - Sede del Parco del Monte Cucco</title>
     <style>
         /* Stili generali */
-        html,
-        body {
+        html, body {
             height: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
@@ -65,7 +64,7 @@
         /* Sezione Galleria */
         section.galleria {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 40px;
             background-color: #f9f9f9;
@@ -75,6 +74,7 @@
         section.galleria img {
             width: 100%;
             height: auto;
+            max-height: 300px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -83,6 +83,54 @@
         section.galleria img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Galleria a scorrimento */
+        .gallery-container1 {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .gallery1 {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery1 img {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
         }
 
         /* Footer */
@@ -122,138 +170,44 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 10px 15px;
-                /* Spazio moderato */
             }
 
             nav .logo {
-
                 align-items: center;
                 width: 100%;
                 justify-content: center;
                 margin-bottom: 10px;
-                /* Spazio ridotto tra logo e menu */
             }
-
-            nav .logo img {
-                max-height: 60px;
-                /* Modifica questo valore per ingrandire il logo */
-                margin-right: 10px;
-            }
-
-
 
             nav ul {
                 order: 2;
                 display: flex;
                 flex-direction: row;
-                justify-content: flex-end;
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 gap: 10px;
-                /* Spazio tra i link */
                 padding: 5px 0;
-                /* Margine moderato sopra/sotto */
             }
 
             nav ul li {
                 margin: 0;
-                /* Rimosso margine superfluo */
             }
 
             nav ul li a {
                 font-size: 0.9rem;
-                /* Dimensione testo adeguata */
                 padding: 5px 10px;
-                /* Spazio moderato per cliccare facilmente */
                 text-align: center;
             }
-        }
-        .gallery-container1 {
-            position: relative;
-            width: 300px;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
 
-        .gallery1 {
-            display: flex;
-            width: calc(100% * 5);
-            transition: transform 0.3s ease;
-        }
+            .gallery1 img {
+                max-width: 100%;
+            }
 
-        .gallery1 img {
-            width: calc(100% / 5); /* Modificato per fare le immagini più larghe */
-            height: auto;
-            cursor: pointer;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .arrow-left {
-            left: 10px;
-        }
-
-        .arrow-right {
-            right: 10px;
-        }
-
-        .arrow:hover {
-            background-color: rgba(255, 255, 255, 0.8);
+            section.galleria {
+                padding: 20px;
+            }
         }
     </style>
-
-<script>
-    let currentIndex = 0;
-
-    function scrollGallery(direction) {
-        const gallery = document.getElementById('gallery');
-        const totalImages = gallery.children.length;
-        const visibleImages = Math.floor(gallery.parentElement.clientWidth / gallery.children[0].clientWidth);
-
-        currentIndex += direction;
-
-        if (currentIndex < 0) {
-            currentIndex = 0;
-        } else if (currentIndex > totalImages - visibleImages) {
-            currentIndex = totalImages - visibleImages;
-        }
-
-        const scrollAmount = currentIndex * gallery.children[0].clientWidth;
-        gallery.style.transform = `translateX(-${scrollAmount}px)`;
-    }
-
-    let newCurrentIndex = 0;
-
-    function scrollNewGallery(direction) {
-        const newGallery = document.getElementById('new-gallery');
-        const newTotalImages = newGallery.children.length;
-        const newVisibleImages = Math.floor(newGallery.parentElement.clientWidth / newGallery.children[0].clientWidth);
-
-        newCurrentIndex += direction;
-
-        if (newCurrentIndex < 0) {
-            newCurrentIndex = 0;
-        } else if (newCurrentIndex > newTotalImages - newVisibleImages) {
-            newCurrentIndex = newTotalImages - newVisibleImages;
-        }
-
-        const newScrollAmount = newCurrentIndex * newGallery.children[0].clientWidth;
-        newGallery.style.transform = `translateX(-${newScrollAmount}px)`;
-    }
-</script>
-
 </head>
 
 <body>
@@ -273,17 +227,15 @@
         </ul>
     </nav>
 
-
-    <div>
-        <h1 style="color:#4CAF50;text-align:center">Galleria</h1>
-    </div>
     <!-- Contenuto principale -->
     <main>
+        <div>
+            <h1 style="color:#4CAF50;text-align:center">Galleria</h1>
+        </div>
         <div class="gallery-container1">
             <div class="gallery1" id="new-gallery">
-    
                 <img src="logo unitre.png" alt="">
-                <img src="" alt="">
+                <img src="direttivo_uni_tre.jpg" alt="">
                 <img src="parcomontecucco.jpg" alt="">
                 <img src="" alt="">
                 <img src="" alt="">
@@ -292,10 +244,7 @@
                 <img src="" alt="">
                 <img src="" alt="">
                 <img src="" alt="">
-    
             </div>
-            <div class="arrow arrow-left" onclick="scrollNewGallery(-1)">&#9664;</div>
-            <div class="arrow arrow-right" onclick="scrollNewGallery(1)">&#9654;</div>
         </div>
     </main>
 
