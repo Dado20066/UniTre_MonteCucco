@@ -167,7 +167,93 @@
                 text-align: center;
             }
         }
+        .gallery-container1 {
+            position: relative;
+            width: 300px;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .gallery1 {
+            display: flex;
+            width: calc(100% * 5);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery1 img {
+            width: calc(100% / 5); /* Modificato per fare le immagini più larghe */
+            height: auto;
+            cursor: pointer;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
     </style>
+
+<script>
+    let currentIndex = 0;
+
+    function scrollGallery(direction) {
+        const gallery = document.getElementById('gallery');
+        const totalImages = gallery.children.length;
+        const visibleImages = Math.floor(gallery.parentElement.clientWidth / gallery.children[0].clientWidth);
+
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        } else if (currentIndex > totalImages - visibleImages) {
+            currentIndex = totalImages - visibleImages;
+        }
+
+        const scrollAmount = currentIndex * gallery.children[0].clientWidth;
+        gallery.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+    let newCurrentIndex = 0;
+
+    function scrollNewGallery(direction) {
+        const newGallery = document.getElementById('new-gallery');
+        const newTotalImages = newGallery.children.length;
+        const newVisibleImages = Math.floor(newGallery.parentElement.clientWidth / newGallery.children[0].clientWidth);
+
+        newCurrentIndex += direction;
+
+        if (newCurrentIndex < 0) {
+            newCurrentIndex = 0;
+        } else if (newCurrentIndex > newTotalImages - newVisibleImages) {
+            newCurrentIndex = newTotalImages - newVisibleImages;
+        }
+
+        const newScrollAmount = newCurrentIndex * newGallery.children[0].clientWidth;
+        newGallery.style.transform = `translateX(-${newScrollAmount}px)`;
+    }
+</script>
+
 </head>
 
 <body>
@@ -187,36 +273,30 @@
         </ul>
     </nav>
 
+
+    <div>
+        <h1 style="color:#4CAF50;text-align:center">Galleria</h1>
+    </div>
     <!-- Contenuto principale -->
     <main>
-        <!-- Sezione Galleria -->
-        <section class="galleria">
-            <div class="container">
-                <h2 style="font-weight: bold;font-size: 20px; color:#4CAF50;">Galleria</h2>
-                <p>Esplora i momenti più belli e significativi della nostra comunità attraverso questa raccolta di
-                    immagini.</p>
-                <div class="grid">
-                    <div class="item">
-                        <img src="img1.jpg" alt="Immagine 1">
-                    </div>
-                    <div class="item">
-                        <img src="img2.jpg" alt="Immagine 2">
-                    </div>
-                    <div class="item">
-                        <img src="img3.jpg" alt="Immagine 3">
-                    </div>
-                    <div class="item">
-                        <img src="img4.jpg" alt="Immagine 4">
-                    </div>
-                    <div class="item">
-                        <img src="img5.jpg" alt="Immagine 5">
-                    </div>
-                    <div class="item">
-                        <img src="img6.jpg" alt="Immagine 6">
-                    </div>
-                </div>
+        <div class="gallery-container1">
+            <div class="gallery1" id="new-gallery">
+    
+                <img src="logo unitre.png" alt="">
+                <img src="" alt="">
+                <img src="parcomontecucco.jpg" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+    
             </div>
-        </section>
+            <div class="arrow arrow-left" onclick="scrollNewGallery(-1)">&#9664;</div>
+            <div class="arrow arrow-right" onclick="scrollNewGallery(1)">&#9654;</div>
+        </div>
     </main>
 
     <!-- Footer -->
