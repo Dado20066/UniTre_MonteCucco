@@ -110,6 +110,13 @@
                 padding: 5px 10px;
                 text-align: center;
             }
+
+            /* Stile specifico per l'iframe sui dispositivi mobili */
+            iframe {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
         }
 
         /* Sezione principale */
@@ -183,8 +190,6 @@
     <main>
         <div class="content">
             <h1 style="border-bottom: 2px solid #4CAF50; display: inline-block;">ISCRIZIONE</h1>
-
-
             <p>
                 E’ possibile iscriversi all'UNITRE presso la sede operativa dell'Associazione <br>
                 Aula piano terra ingresso giardino scuola dell’Infanzia G. Agostinelli <span> via Brunozzi Sigillo
@@ -192,9 +197,10 @@
                     dalle 17.00 alle 18.30.</span> <br> Vi verranno fornite tutte le informazioni sulle attività e
                 corsi. <br> Oppure clicca sopra all'immagine di Google Form
             </p>
-            <img onclick="form()" style="width: 50%; padding-top: 30px;border-bottom: solid black 2px;cursor: pointer;" src="form.png" alt="">
 
-
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc4FObHyda4f_7cQWBNFiqbxTmG5WhL6FwF7UnEcxnI_0C6jg/viewform?embedded=true"
+                width="640" height="1337" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
         </div>
     </main>
 
