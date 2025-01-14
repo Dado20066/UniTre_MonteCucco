@@ -69,6 +69,16 @@
             text-decoration: underline;
         }
 
+
+        iframe {
+            /* Stile specifico per l'iframe */
+            width: 100%;
+            height: auto;
+            min-height: 800px;
+            /* Altezza minima per garantire una buona visibilità sui desktop */
+            border: none;
+        }
+
         /* Media Query per dispositivi mobili */
         @media (max-width: 768px) {
             nav {
@@ -112,11 +122,16 @@
             }
 
             /* Stile specifico per l'iframe sui dispositivi mobili */
+            /* Stile specifico per l'iframe */
             iframe {
                 width: 100%;
                 height: auto;
-                aspect-ratio: 16 / 9;
+                min-height: 800px;
+                /* Altezza minima per garantire una buona visibilità sui desktop */
+                border: none;
             }
+
+
         }
 
         /* Sezione principale */
@@ -192,15 +207,15 @@
             <h1 style="border-bottom: 2px solid #4CAF50; display: inline-block;">ISCRIZIONE</h1>
             <p>
                 E’ possibile iscriversi all'UNITRE presso la sede operativa dell'Associazione <br>
-                Aula piano terra ingresso giardino scuola dell’Infanzia G. Agostinelli <span> via Brunozzi Sigillo
-                    (PG)</span> <br> <span> Nei giorni di lunedì
+                Aula piano terra ingresso giardino scuola dell’Infanzia G. Agostinelli <span>via Brunozzi Sigillo
+                    (PG)</span> <br> <span>Nei giorni di lunedì
                     dalle 17.00 alle 18.30.</span> <br> Vi verranno fornite tutte le informazioni sulle attività e
-                corsi. <br> Oppure clicca sopra all'immagine di Google Form
+                corsi.
             </p>
 
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSc4FObHyda4f_7cQWBNFiqbxTmG5WhL6FwF7UnEcxnI_0C6jg/viewform?embedded=true"
-                width="640" height="1337" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+                frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
         </div>
     </main>
 
@@ -209,7 +224,7 @@
             <img src="logo unitre.png" alt="Logo Unitre">
         </div>
         <div class="info">
-            <strong>Università delle tre età - Sede del Parco del Monte Cucco</strong>
+            <strong>Università delle Tre Età <br> Sede del Parco del Monte Cucco</strong>
             Codice Fiscale: 92022480542<br>
             Email: unitreparcomontecucco@gmail.com <br>
             PEC: unitreparcomontecucco@pec.it
@@ -217,7 +232,7 @@
         <div class="credits">
             <br>
             &copy; 2025 Università Parco del Monte Cucco<br>
-            Sito realizzato da Spigarelli Davide.
+            Sito realizzato da Davide Spigarelli.
         </div>
     </footer>
 
