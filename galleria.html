@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="logo unitre.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg">
     <title>Unitre - Sede del Parco del Monte Cucco</title>
     <style>
         /* Stili generali */
@@ -74,17 +75,16 @@
             display: inline-block;
         }
 
-        /* Sezione Galleria */
-        section.galleria {
+        /* Sezione Galleria per desktop */
+        section.galleria-desktop {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 40px;
             background-color: #f9f9f9;
-            text-align: center;
         }
 
-        section.galleria img {
+        section.galleria-desktop img {
             width: 100%;
             height: auto;
             max-height: 300px;
@@ -93,39 +93,37 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section.galleria img:hover {
+        section.galleria-desktop img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
-
-        /* Galleria a scorrimento */
-        .gallery-container1 {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .gallery1 {
+        /* Galleria a scorrimento per dispositivi mobili */
+        .gallery-container-mobile {
             display: flex;
-            transition: transform 0.3s ease;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 20px 0;
+             display: none;
         }
 
-        .gallery1 img {
+        .gallery-container-mobile img {
             flex: 0 0 auto;
-            width: 100vw;
-            /* Imposta la larghezza a 100% della larghezza dello schermo */
-            max-width: 350px;
-            /* Limita la larghezza massima per non farle diventare troppo grandi su desktop */
-            height: auto;
-            margin: 0;
-            cursor: pointer;
+            width: 80%;
+            margin: 0 10px;
+            scroll-snap-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .gallery-container-mobile img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
 
-
-        /* Pulsanti di scorrimento (desktop) */
+        /* Pulsanti di scorrimento per dispositivi mobili */
         .arrow-left,
         .arrow-right {
             position: absolute;
@@ -215,17 +213,35 @@
                 text-align: center;
             }
 
-            /* Galleria a scorrimento */
-            .gallery1 img {
-                max-width: 500px;
-            }
-
-            /* Pulsanti di scorrimento mobili */
-            .arrow-left,
+           /* Visualizzazione galleria mobile */
+            section.galleria-desktop {
+              display: flex;
+              overflow-x: auto;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+              padding: 20px 0;
+          }
+          .gallery-item-wrapper {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+              min-width: 100%; /* Added to make images center on each scroll*/
+           }
+            section.galleria-desktop img {
+                flex: 0 0 auto;
+                 width: 80%;
+                margin: 0 10px;
+               scroll-snap-align: center;
+             }
+              .arrow-left,
             .arrow-right {
                 display: none;
             }
+              .gallery-container-mobile {
+                display:none;
+            }
         }
+
     </style>
 </head>
 
@@ -233,7 +249,8 @@
     <!-- Barra di navigazione -->
     <nav>
         <div class="logo">
-            <img src="logo unitre.png" alt="Logo Unitre">
+            <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                alt="Logo Unitre">
         </div>
         <ul>
             <li><a href="Home-Page.html">HOME</a></li>
@@ -255,74 +272,105 @@
                 questa raccolta di immagini.</p>
         </div>
 
-        <!-- Galleria a scorrimento -->
-        <div class="gallery-container1" id="gallery-container1">
-            <div class="gallery1" id="new-gallery">
-                <img src="logo unitre.png" alt="Image 1">
-                <img src="direttivo_uni_tre.jpg" alt="Image 2">
-                <img src="parcomontecucco.jpg" alt="Image 3">
-                <!-- Aggiungi altre immagini qui -->
+        <!-- Galleria per desktop -->
+         <section class="galleria-desktop">
+           <div class="gallery-item-wrapper">
+              <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                alt="Logo Unitre">
+            </div>
+            <div class="gallery-item-wrapper">
+              <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/direttivo_uni_tre.jpg"
+                alt="Il direttivo dell'Unitre">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/parcomontecucco.jpg"
+                alt="Il Parco del Monte Cucco">
+             </div>
+            <div class="gallery-item-wrapper">
+              <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/immagine-del-Ponte-Romano.jpg"
+                alt="Il Ponte Romano">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Corpus-Domini-infiorata-2.jpg"
+                alt="Infiorata del Corpus Domini">
+             </div>
+             <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Cavalli-al-pascolo-Parco-del-Monte-Cucco.jpg" alt="Cavalli al pascolo nel Parco del Monte Cucco">
+            </div>
+             <div class="gallery-item-wrapper">
+              <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/IMGP3717.jpg" alt="Paesaggio del Monte Cucco">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/IMGP3718.jpg" alt="Sentieri del Monte Cucco">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Immagine-del-Monte-cucco-da-inserire-nella-pagina-Home.jpg" alt="Monte Cucco">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/immagine-faggeta-Monte-Cucco.jpg" alt="Faggeta del Monte Cucco">
+             </div>
+            <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Vista-Monte-Cucco.jpg" alt="Veduta del Monte Cucco">
+            </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Val-di-Ranco.jpg" alt="Val di Ranco">
+             </div>
+            <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Spaccatura-delle-lecce-foto-Anna-Beni.jpg" alt="Spaccatura delle lecce">
+             </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Matteo-da-gualdo.jpg" alt="Matteo da Gualdo">
+             </div>
+             <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Matteo-da-gualdo-opera.jpg" alt="Opera di Matteo da Gualdo">
+             </div>
+            <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/La-grotta-di-Monte-Cucco.jpg" alt="La Grotta di Monte Cucco">
+            </div>
+            <!-- Aggiungi altre immagini qui -->
+        </section>
+        <!-- Galleria per mobile-->
+        <div class="gallery-container-mobile">
+             <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                alt="Logo Unitre">
+             </div>
+             <div class="gallery-item-wrapper">
+                 <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/direttivo_uni_tre.jpg"
+                alt="Il direttivo dell'Unitre">
+             </div>
+             <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/parcomontecucco.jpg"
+                alt="Il Parco del Monte Cucco">
+             </div>
+            <div class="gallery-item-wrapper">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/immagine-del-Ponte-Romano.jpg"
+                alt="Il Ponte Romano">
+             </div>
+            <div class="gallery-item-wrapper">
+               <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/Corpus-Domini-infiorata-2.jpg"
+                alt="Infiorata del Corpus Domini">
             </div>
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="logo-container">
-            <img src="logo unitre.png" alt="Logo Unitre">
-        </div>
-        <div class="info">
-            <strong>Università delle Tre Età <br> Sede del Parco del Monte Cucco</strong>
-            Codice Fiscale: 92022480542<br>
-            Email: unitreparcomontecucco@gmail.com <br>
-            PEC: unitreparcomontecucco@pec.it
-        </div>
-        <div class="credits">
-            &copy; 2025 Università Parco del Monte Cucco<br>
-            Sito realizzato da Davide Spigarelli.
-        </div>
-    </footer>
 
-    <script>
-        // Funzione di scorrimento per la galleria
-        let currentIndex = 0;
-
-        function scrollGallery(direction) {
-            const gallery = document.getElementById('new-gallery');
-            const totalImages = gallery.children.length;
-            const visibleImages = Math.floor(gallery.parentElement.clientWidth / gallery.children[0].clientWidth);
-
-            currentIndex += direction;
-
-            if (currentIndex < 0) {
-                currentIndex = 0;
-            } else if (currentIndex > totalImages - visibleImages) {
-                currentIndex = totalImages - visibleImages;
-            }
-
-            const scrollAmount = currentIndex * gallery.children[0].clientWidth;
-            gallery.style.transform = `translateX(-${scrollAmount}px)`;
-        }
-
-        // Aggiungi supporto per il touch (su dispositivi mobili)
-        let startTouchX = 0;
-
-        const galleryContainer = document.getElementById('gallery-container1');
-
-        galleryContainer.addEventListener('touchstart', (e) => {
-            startTouchX = e.touches[0].clientX;
-        });
-
-        galleryContainer.addEventListener('touchend', (e) => {
-            const endTouchX = e.changedTouches[0].clientX;
-            if (startTouchX - endTouchX > 50) {
-                scrollGallery(1);  // Scorri a destra
-            } else if (endTouchX - startTouchX > 50) {
-                scrollGallery(-1); // Scorri a sinistra
-            }
-        });
-    </script>
-
+        <!-- Footer -->
+        <footer>
+            <div class="logo-container">
+                <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                    alt="Logo Unitre">
+            </div>
+            <div class="info">
+                <strong>Università delle Tre Età <br> Sede del Parco del Monte Cucco</strong>
+                Codice Fiscale: 92022480542<br>
+                Email: unitreparcomontecucco@gmail.com <br>
+                PEC: unitreparcomontecucco@pec.it
+            </div>
+            <div class="credits">
+                © 2025 Università Parco del Monte Cucco<br>
+                Sito realizzato da Davide Spigarelli.
+            </div>
+        </footer>
 </body>
 
 </html>

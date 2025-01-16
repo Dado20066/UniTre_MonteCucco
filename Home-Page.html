@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="logo unitre.png">
+    <link rel="icon" type="image/x-icon"
+        href="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg">
     <title>Unitre - Sede del Parco del Monte Cucco</title>
     <style>
         /* Stili generali */
@@ -59,13 +60,17 @@
             position: relative;
             text-align: center;
             color: white;
-            background-image: url('parcomontecucco.jpg');
+             background-image: url('https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/parcomontecucco.jpg');
             background-size: cover;
             background-position: center;
-            height: 80vh;
+            min-height: 70vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 100px;
+             padding-bottom: 100px;
+              max-height: 90vh;
+          
         }
 
         .hero .overlay {
@@ -81,7 +86,7 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            padding: 20px;
+         
         }
 
         .hero h1 {
@@ -91,12 +96,12 @@
 
         .hero h2 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .hero .buttons {
@@ -118,8 +123,8 @@
             background-color: #45a049;
         }
 
-  /* Footer */
-  footer {
+        /* Footer */
+        footer {
             background-color: black;
             color: white;
             padding: 20px;
@@ -149,8 +154,8 @@
             display: block;
         }
 
-/* Media Query per dispositivi mobili */
-@media (max-width: 768px) {
+        /* Media Query per dispositivi mobili */
+        @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 align-items: flex-start;
@@ -199,7 +204,23 @@
                 /* Spazio moderato per cliccare facilmente */
                 text-align: center;
             }
+             .hero {
+                padding-top: 50px;
+                 padding-bottom: 50px;
+             }
         }
+         .center-title-container {
+             margin-bottom: 0;
+             }
+         .center-title-container h1{
+            margin-bottom: 0;
+         }
+        .center-title-container p {
+             margin-bottom: 0;
+        }
+
+        .wp-site-blocks {
+            display: none;}
     </style>
 </head>
 
@@ -207,7 +228,8 @@
     <!-- Barra di navigazione -->
     <nav>
         <div class="logo">
-            <img src="logo unitre.png" alt="Logo Unitre">
+            <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                alt="Logo Unitre">
         </div>
         <ul>
             <li><a href="Home-Page.html">HOME</a></li>
@@ -241,7 +263,8 @@
     <!-- Footer -->
     <footer>
         <div class="logo-container">
-            <img src="logo unitre.png" alt="Logo Unitre">
+            <img src="https://www.unitreparcodelmontecucco.it/wp-content/uploads/2025/01/logo-unitre-1.jpg"
+                alt="Logo Unitre">
         </div>
         <div class="info">
             <strong>Università delle Tre Età <br> Sede del Parco del Monte Cucco</strong>
@@ -251,7 +274,7 @@
         </div>
         <div class="credits">
             <br>
-            &copy; 2025 Università Parco del Monte Cucco<br>
+            © 2025 Università Parco del Monte Cucco<br>
             Sito realizzato da Davide Spigarelli.
         </div>
     </footer>
